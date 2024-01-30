@@ -1,3 +1,16 @@
-/* 
-    General Styles
-*/
+.my-card {
+    min-width: 400px;
+    min-height: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 5px;
+
+}
+
+
+.my-carousel {
+    display: flex;
+    overflow-x: scroll;
+    border: black;
+}
