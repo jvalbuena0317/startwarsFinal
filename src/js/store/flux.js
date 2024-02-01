@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			people: [],
 			planets: [],
 			vehicles: [],
+			favorites: [],
 
 		},
 		actions: {
@@ -35,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getApiPlanets: async () => {
 				const store = getStore();
-				const localPlanets = localStorage.getItem("people")
+				const localPlanets = localStorage.getItem("planets")
 				if (localPlanets) {
 					setStore({ planets: JSON.parse(localPlanets) });
 					return;
@@ -77,10 +78,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 				localStorage.setItem("vehicles", JSON.stringify(vehiclesStore))
 
 				setStore({ vehicles: vehiclesStore });
+			},
+			addToFavorites: (fav) => {
+				let store = getStore()
+				let exists = store.favorites.some((item) => item._id == fav._id)
+				if (exists) {
+					//eliminarlos
+					let newArr = store.favorites.filter((item) => item._id != fav._id)
+					setStore({
+						favorites: newArr
+					})
+				} else {
+					setStore({
+						favorites: [...store.favorites, fav]
+					})
+				}
+			},
+			deleteFav: (favId) => {
+				let store = getStore()
+				//eliminarlos
+				let newArr = store.favorites.filter((item) => item._id != favId)
+				setStore({
+					favorites: newArr
+				})
 			}
-
-
-
 
 
 		}

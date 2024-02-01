@@ -5,6 +5,8 @@
     border-radius: 5px;
     padding: 0px;
     margin: 5px;
+    color: white;
+
 
 }
 
@@ -12,5 +14,10 @@
 .my-carousel {
     display: flex;
     overflow-x: scroll;
-    border: black;
+    border: white;
+
+}
+
+body {
+    background-color: black;
 }

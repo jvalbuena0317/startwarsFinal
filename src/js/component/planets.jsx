@@ -3,10 +3,10 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 const Planets = () => {
-    const { store } = useContext(Context)
+    const { store, actions } = useContext(Context)
     return (
         <div className="container">
-            <h1 className="text-danger"> Planets</h1>
+            <h1 className="text-danger mt-3"> Planets</h1>
             <div className="my-carousel">
                 {store.planets.map((item) => {
                     return (
@@ -21,9 +21,10 @@ const Planets = () => {
                                 <div className="card-footer d-flex justify-content-between">
                                     <div>
                                         <Link to={`/component/planets/${item._id}`} className="btn btn-outline-primary">Learn More</Link></div>
-
-                                    <div><button><i className="fa fa-heart text-danger" /></button></div>
-
+                                    <div>
+                                        <button onClick={() => actions.addToFavorites(item)}>
+                                            <i className="fa fa-heart text-danger" /></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
