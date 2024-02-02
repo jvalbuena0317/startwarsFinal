@@ -33,7 +33,7 @@ const Details = () => {
           <div className="card mb-3 bg-dark text-white">
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={search?.properties?.url} className="img-fluid rounded-start" alt="..." />
+                <img src={`https://starwars-visualguide.com/assets/img/characters/${search.uid}.jpg`} className="img-fluid rounded-start" alt="..." />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -87,7 +87,7 @@ const Details = () => {
             <div className="card mb-3 bg-dark text-white">
               <div className="row g-0">
                 <div className="col-md-4">
-                  <img src={search?.properties?.url} className="img-fluid rounded-start" alt="..." />
+                  <img src={`https://starwars-visualguide.com/assets/img/planets/${search.uid}.jpg`} className="img-fluid rounded-start" alt="..." />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
@@ -140,7 +140,7 @@ const Details = () => {
             <div className="card mb-3 bg-dark text-white">
               <div className="row g-0">
                 <div className="col-md-4">
-                  <img src={search?.properties?.url} className="img-fluid rounded-start" alt="..." />
+                  <img src={`https://starwars-visualguide.com/assets/img/vehicles/${search.uid}.jpg`} className="img-fluid rounded-start" alt="..." />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
